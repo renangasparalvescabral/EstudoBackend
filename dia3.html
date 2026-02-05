@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia 3 - JS e CSS</title>
+</head>
+<style>
+    body{
+    .caixa{
+    width: 150px;
+    height: 150px;
+    background-color: lightgray;
+    transition: background 0.3s, transform 0.3s;
+    margin-top: 20px;
+    }
+
+    .azul{
+    background: dodgerblue;
+    transform: scale(1.1);
+    }
+}
+</style>
+
+<body>
+
+    <h2>Dia 3 - JavaScript e CSS - Controle de cores</h2>
+
+    <button id="botaoAdd">Adicionar cor</button>
+    <button id="botaoRemove">Remover cor</button>
+    <div class="caixa" id="caixa"></div>  
+    <div id="msg"></div>  
+
+
+    <script>
+
+        const botaoAdd = document.querySelector('#botaoAdd');
+        const botaoRemove = document.querySelector('#botaoRemove');
+        const caixa = document.querySelector('#caixa');
+        const msg = document.querySelector('#msg');
+
+
+        botaoAdd.addEventListener('click', () => {
+            caixa.classList.add('azul');
+            msg.innerHTML = "cor azul adicionada";
+        
+        });
+
+        botaoRemove.addEventListener('click', () => {
+            caixa.classList.remove('azul');
+            msg.innerHTML = "Cor azul removida";
+
+        });
+
+
+
+    </script>
+    
+</body>
+</html>
