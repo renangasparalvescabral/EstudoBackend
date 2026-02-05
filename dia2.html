@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+.azul {
+  background-color: green;
+}
+
+.vermelho {
+  background-color: red;
+}
+
+.dark{
+  background-color: black;
+  color: white;
+}
+
+.white{
+  background-color: rgb(158, 13, 13);
+  color: black;
+}
+
+
+</style>
+<body>
+
+    <input id="campo" type="text" placeholder="Digite algo">
+    <button id="btn">clique aqui</button>
+    <button id="botaoAdd">Adiciona</button>
+    <button id="botaoRemove">Remove</button>
+    <div id="msg"></div>
+
+
+
+
+    <script>
+
+        const botaoTema = document.querySelector("#botaoAdd");
+        const botaoRemove = document.querySelector("#botaoRemove");
+        const body = document.querySelector("body");
+        const campo = document.querySelector("#campo");
+        const btn = document.querySelector("#btn");
+        const msg = document.querySelector("#msg");
+
+        botaoTema.addEventListener("click", function (){
+            body.classList.toggle('dark');
+        })
+
+        botaoRemove.addEventListener("click", function (){
+            body.classList.remove('white');
+        })
+
+
+
+        btn.addEventListener("click", function () {
+
+            if (campo.value === "") {
+                campo.classList.toggle('vermelho');
+                msg.textContent = "❌ O campo está vazio!";
+                msg.style.color = "red";
+                
+
+            } else {
+                campo.classList.toggle('azul');
+                msg.textContent = `✅ Formulário enviado com sucesso! ${campo.value}`;
+                msg.style.color = "green";
+                
+            }
+        })
+
+
+    </script>
+
+    <hr>
+
+</body>
+
+</html>
