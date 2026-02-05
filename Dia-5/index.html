@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia 5 - LocalStorage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Dia 5 - LocalStorage</h1>
+        <p class="visitas">Visitas: <span id="contador">0</span></p>
+        <button id="btnTema">Alternar Tema</button>
+    </header>
+
+    <main>
+        <section class="todo-section">
+            <h2>Lista de Tarefas</h2>
+            <p class="info">As tarefas ficam salvas mesmo se voce fechar o navegador!</p>
+
+            <form id="formTarefa">
+                <input type="text" id="novaTarefa" placeholder="Digite uma tarefa..." required>
+                <button type="submit">Adicionar</button>
+            </form>
+
+            <ul id="listaTarefas"></ul>
+
+            <div class="acoes">
+                <button id="btnLimpar" class="btn-danger">Limpar Tudo</button>
+            </div>
+        </section>
+
+        <section class="storage-info">
+            <h2>Dados no LocalStorage</h2>
+            <pre id="storageView"></pre>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 0.9em;
+}
+
+/* Alertas */
+.alerta {
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.alerta h3 {
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.alerta ul {
+    margin-left: 20px;
+}
+
+.alerta li {
+    margin-bottom: 5px;
+}
+
+.alerta.sucesso {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.alerta.erro {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: relative;
+}
+
+.campo label {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95em;
+}
+
+.campo input,
+.campo textarea {
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-family: inherit;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.campo textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Campo com erro */
+.campo-erro input,
+.campo-erro textarea {
+    border-color: #dc3545;
+    background-color: #fff8f8;
+}
+
+.campo-erro input:focus,
+.campo-erro textarea:focus {
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.2);
+}
+
+.msg-erro {
+    color: #dc3545;
+    font-size: 0.85em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.msg-erro::before {
+    content: "!";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    background-color: #dc3545;
+    color: white;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* Contador de caracteres */
+.contador-chars {
+    font-size: 0.8em;
+    color: #999;
+    text-align: right;
+}
+
+/* Campos obrigatórios */
+.obrigatorio {
+    font-size: 0.85em;
+    color: #666;
+    font-style: italic;
+}
+
+/* Botão */
+.btn-enviar {
+    padding: 14px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-enviar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-enviar:active {
+    transform: translateY(0);
+}
+
+/* Seção de conceitos */
+.conceitos {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #eee;
+}
+
+.conceitos h2 {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.conceitos ul {
+    list-style: none;
+}
+
+.conceitos li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.conceitos li:last-child {
+    border-bottom: none;
+}
+
+.conceitos code {
+    background-color: #f4f4f4;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: 'Consolas', monospace;
+    color: #764ba2;
+    font-size: 0.95em;
+}
+
+/* Responsivo */
+@media (max-width: 540px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+}

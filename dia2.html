@@ -10,23 +10,22 @@
 <style>
 
 .azul {
-  background-color: green;
+  background-color: dodgerblue;
 }
 
 .vermelho {
   background-color: red;
 }
 
-.dark{
+.dark {
   background-color: black;
   color: white;
 }
 
-.white{
-  background-color: rgb(158, 13, 13);
+.light {
+  background-color: white;
   color: black;
 }
-
 
 </style>
 <body>
@@ -54,24 +53,23 @@
         })
 
         botaoRemove.addEventListener("click", function (){
-            body.classList.remove('white');
+            body.classList.remove('dark');
         })
 
 
 
         btn.addEventListener("click", function () {
+            // Remove classes anteriores para evitar acúmulo
+            campo.classList.remove('vermelho', 'azul');
 
             if (campo.value === "") {
-                campo.classList.toggle('vermelho');
+                campo.classList.add('vermelho');
                 msg.textContent = "❌ O campo está vazio!";
                 msg.style.color = "red";
-                
-
             } else {
-                campo.classList.toggle('azul');
+                campo.classList.add('azul');
                 msg.textContent = `✅ Formulário enviado com sucesso! ${campo.value}`;
                 msg.style.color = "green";
-                
             }
         })
 

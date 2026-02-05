@@ -1,0 +1,396 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+/* Container */
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.container.welcome {
+    text-align: center;
+    padding-top: 80px;
+}
+
+.container.dashboard {
+    max-width: 800px;
+}
+
+.container > h1,
+.container > .subtitulo {
+    color: white;
+    text-align: center;
+}
+
+.container > h1 {
+    margin-bottom: 5px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.subtitulo {
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Welcome Box */
+.welcome-box {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    margin-bottom: 30px;
+}
+
+.welcome-msg {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.welcome-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Botões */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background: #e0e0e0;
+}
+
+/* Formulário */
+form {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo label {
+    font-weight: 600;
+    color: #333;
+}
+
+.campo input {
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.campo input:focus {
+    border-color: #667eea;
+}
+
+.campo input:disabled {
+    background: #f5f5f5;
+    color: #999;
+}
+
+.campo small {
+    font-size: 0.8em;
+    color: #999;
+}
+
+.campo-erro input {
+    border-color: #dc3545;
+    background-color: #fff8f8;
+}
+
+.btn-enviar {
+    padding: 14px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-enviar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Links */
+.link-registro {
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+}
+
+.link-registro a {
+    color: white;
+    font-weight: 600;
+}
+
+.voltar {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+}
+
+.voltar:hover {
+    color: white;
+}
+
+/* Alertas */
+.alerta {
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.alerta.sucesso {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.alerta.erro {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+.alerta ul {
+    margin-left: 20px;
+}
+
+.alerta a {
+    color: inherit;
+    font-weight: 600;
+}
+
+/* Dashboard Nav */
+.dashboard-nav {
+    background: rgba(0,0,0,0.2);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    color: white;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+
+.nav-user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+}
+
+.btn-logout {
+    padding: 8px 16px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9em;
+    transition: background 0.3s;
+}
+
+.btn-logout:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+/* Dashboard Cards */
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.card-icon {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.card ul {
+    list-style: none;
+}
+
+.card li {
+    padding: 5px 0;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.card code {
+    background: #f4f4f4;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.85em;
+}
+
+.card p {
+    color: #666;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+/* Session Data */
+.session-data {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.session-data h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.session-data pre {
+    background: #1a1a2e;
+    color: #0f0;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.85em;
+}
+
+/* Dashboard Actions */
+.dashboard-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Conceitos */
+.conceitos {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-top: 30px;
+}
+
+.conceitos h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.conceitos ul,
+.conceitos ol {
+    margin-left: 20px;
+}
+
+.conceitos li {
+    padding: 8px 0;
+    color: #555;
+}
+
+.conceitos code {
+    background: #f4f4f4;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: 'Consolas', monospace;
+    color: #764ba2;
+}
+
+/* HR */
+hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 10px 0;
+}
+
+h3 {
+    color: #333;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .welcome-actions,
+    .form-actions,
+    .dashboard-actions {
+        flex-direction: column;
+    }
+
+    .dashboard-nav {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}

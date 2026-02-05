@@ -1,3 +1,125 @@
-.ajaxloading{
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+/* Formulario de busca */
+.pesquisa {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.pesquisa input {
+    flex: 1;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.pesquisa input:focus {
+    border-color: #007bff;
+}
+
+.pesquisa button {
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pesquisa button:hover {
+    background-color: #0056b3;
+}
+
+/* Loading */
+.ajaxloading {
     display: none;
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-style: italic;
+}
+
+/* Resultados */
+#resultados h2 {
+    color: #333;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+.lista-produtos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.produto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.produto:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.produto-nome {
+    font-weight: 500;
+    color: #333;
+}
+
+.produto-preco {
+    font-weight: bold;
+    color: #28a745;
+    font-size: 1.1em;
+}
+
+/* Sem resultados */
+.sem-resultados {
+    text-align: center;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    color: #666;
+}
+
+.sem-resultados p:last-child {
+    font-size: 0.9em;
+    color: #999;
+}
+
+/* Erro */
+.erro {
+    text-align: center;
+    padding: 20px;
+    color: #dc3545;
+    background-color: #f8d7da;
+    border-radius: 8px;
 }
