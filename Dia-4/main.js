@@ -51,18 +51,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
 
+    function esc(str) {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+    }
+
     function exibirResultados(data) {
         if (data.total === 0) {
             resultadosContainer.innerHTML = `
                 <div class="sem-resultados">
-                    <p>Nenhum produto encontrado para "<strong>${data.termo}</strong>"</p>
+                    <p>Nenhum produto encontrado para "<strong>${esc(data.termo)}</strong>"</p>
                     <p>Tente: notebook, mouse, teclado, monitor, headset, webcam, ssd, memoria</p>
                 </div>
             `;
             return;
         }
 
-        let html = `<h2>Resultados para "${data.termo}" (${data.total})</h2>`;
+        let html = `<h2>Resultados para "${esc(data.termo)}" (${data.total})</h2>`;
         html += '<ul class="lista-produtos">';
 
         data.resultados.forEach(produto => {
@@ -72,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             html += `
                 <li class="produto">
-                    <span class="produto-nome">${produto.nome}</span>
+                    <span class="produto-nome">${esc(produto.nome)}</span>
                     <span class="produto-preco">${precoFormatado}</span>
                 </li>
             `;

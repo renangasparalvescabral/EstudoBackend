@@ -82,11 +82,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const li = document.createElement('li');
             li.className = 'tarefa' + (tarefa.concluida ? ' concluida' : '');
 
-            li.innerHTML = `
-                <input type="checkbox" ${tarefa.concluida ? 'checked' : ''} data-index="${index}">
-                <span>${tarefa.texto}</span>
-                <button data-index="${index}">Excluir</button>
-            `;
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.checked = tarefa.concluida;
+            checkbox.dataset.index = index;
+
+            const span = document.createElement('span');
+            span.textContent = tarefa.texto;
+
+            const btn = document.createElement('button');
+            btn.textContent = 'Excluir';
+            btn.dataset.index = index;
+
+            li.appendChild(checkbox);
+            li.appendChild(span);
+            li.appendChild(btn);
 
             listaTarefas.appendChild(li);
         });
