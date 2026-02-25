@@ -19,7 +19,7 @@ Projeto de estudo de desenvolvimento web backend, evoluindo progressivamente de 
 
 1. Clone o repositório dentro da pasta `htdocs` do XAMPP:
    ```bash
-   git clone https://github.com/seu-usuario/EstudoBackend.git
+   git clone https://github.com/renangasparalvescabral/EstudoBackend.git
    ```
 
 2. Inicie o Apache e o MySQL pelo painel do XAMPP.
